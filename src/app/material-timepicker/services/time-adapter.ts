@@ -20,7 +20,7 @@ export class TimeAdapter {
     }
 
     static formatTime(time: string, opts: TimeOptions): string {
-        if (!time) {
+        if (!time || !/^([0-1]?[0-9]|2[0-3]):([0-5][0-9]|[0-9])$/.test(time)) {
             return 'Invalid Time';
         }
         const {format} = opts;
